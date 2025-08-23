@@ -63,22 +63,38 @@ document
 // toggling feature
 const addMoneyBtn = document.getElementById('add-money-btn');
 const cashOutBtn = document.getElementById('cash-out-btn');
+const transactionsBtn = document.getElementById('transactions-btn');
 
 const addMoneyPage = document.getElementById('add-money-page');
 const cashOutPage = document.getElementById('cash-out-page');
+const transactionsPage = document.getElementById('transactions-page');
 
 addMoneyBtn.addEventListener('click', function () {
   cashOutPage.style.display = 'none';
+  transactionsPage.style.display = 'none';
   addMoneyPage.style.display = 'block';
 
   addMoneyBtn.style.borderColor = 'blue';
   cashOutBtn.style.border = '';
+  transactionsBtn.style.border = '';
 });
 
 cashOutBtn.addEventListener('click', function () {
   addMoneyPage.style.display = 'none';
+  transactionsPage.style.display = 'none';
   cashOutPage.style.display = 'block';
 
   cashOutBtn.style.borderColor = 'blue';
   addMoneyBtn.style.border = '';
+  transactionsBtn.style.border = '';
+});
+
+transactionsBtn.addEventListener('click', function () {
+  addMoneyPage.style.display = 'none';
+  cashOutPage.style.display = 'none';
+  transactionsPage.style.display = 'block';
+
+  transactionsBtn.style.borderColor = 'blue';
+  addMoneyBtn.style.border = '';
+  cashOutBtn.style.border = '';
 });

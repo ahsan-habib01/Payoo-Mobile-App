@@ -18,7 +18,7 @@
 <body class="bg-[#f4f5f7] max-w-xl mx-auto">
   <main class="bg-white rounded-b-3xl pb-3">
     <nav class="flex justify-between items-center p-5 border-b-1 border-gray-300">
-      <div class="flex justify-center items-center">
+      <div class="flex justify-center items-center gap-2">
         <img class="h-15" src="./assets/Group.png" alt="">
         <div>
           <h2 class="font-bold text-lg">$<span id="available-balance">45000</span></h2>
@@ -55,7 +55,7 @@
           <img class="mx-auto" src="./assets/purse1.png" alt="">
           <p>Pay Bill</p>
         </div>
-        <div class=" border-1 border-gray-300 text-center p-5 rounded-xl">
+        <div id="transactions-btn" class=" border-1 border-gray-300 text-center p-5 rounded-xl">
           <img class="mx-auto" src="./assets/transaction1.png" alt="">
           <p>Transactions</p>
         </div>
@@ -65,7 +65,7 @@
 
   <section class="p-5 pb-20">
     <!-- Add Money Page -->
-    <div id="add-money-page" class="">
+    <div id="add-money-page" class="hidden">
       <h1 class="text-xl py-5 font-semibold">Add Money</h1>
       <form class="bg-white p-5 rounded-xl" action="">
         <div class="mb-1">
@@ -116,10 +116,71 @@
           <input id="pin-number" type="text" placeholder="Enter 4 digit pin number"
             class="input w-full rounded-full bg-[#f4f5f7] " />
         </div>
-        <button id="withdraw-submit" class="btn bg-[#0874f2] w-full mt-5 rounded-full text-white text-lg h-12">Withdraw Money</button>
+        <button id="withdraw-submit" class="btn bg-[#0874f2] w-full mt-5 rounded-full text-white text-lg h-12">Withdraw
+          Money</button>
 
       </form>
     </div>
+
+    <!-- Transactions -->
+    <div id="transactions-page" class="">
+      <div class="flex justify-between items-center">
+        <h1 class="text-xl py-5 font-semibold">Transaction History</h1>
+        <p class="text-gray-400">View All</p>
+      </div>
+      <ul class="list bg-white rounded-box shadow-md grid grid-cols-1">
+        <li class="list-row">
+          <div class="size-10 rounded-full bg-gray-200 flex items-center justify-center">
+            <img class=" " src="./assets/wallet1.png" />
+          </div>
+          <div class="list-col-grow">
+            <div class="font-semibold">Electricity Bill</div>
+            <div class="text-xs font-semibold opacity-60">Today 01:44 AM</div>
+          </div>
+          <button class="btn btn-square btn-ghost">
+            <i class="fa-solid fa-ellipsis-vertical text-lg text-center"></i>
+          </button>
+        </li>
+        <li class="list-row ">
+          <div class="size-10 rounded-full bg-gray-200 flex items-center justify-center">
+            <img class=" " src="./assets/wallet1.png" />
+          </div>
+          <div class="list-col-grow">
+            <div class="font-semibold">Bank Deposit</div>
+            <div class="text-xs font-semibold opacity-60">Today 01:44 AM</div>
+          </div>
+          <button class="btn btn-square btn-ghost">
+            <i class="fa-solid fa-ellipsis-vertical text-lg text-center"></i>
+          </button>
+        </li>
+        <li class="list-row ">
+          <div class="size-10 rounded-full bg-gray-200 flex items-center justify-center">
+            <img class=" " src="./assets/wallet1.png" />
+          </div>
+          <div class="list-col-grow">
+            <div class="font-semibold">Mobile Recharge</div>
+            <div class="text-xs font-semibold opacity-60">Today 01:44 AM</div>
+          </div>
+          <button class="btn btn-square btn-ghost">
+            <i class="fa-solid fa-ellipsis-vertical text-lg text-center"></i>
+          </button>
+        </li>
+        <li class="list-row ">
+          <div class="size-10 rounded-full bg-gray-200 flex items-center justify-center">
+            <img class=" " src="./assets/wallet1.png" />
+          </div>
+          <div class="list-col-grow">
+            <div class="font-semibold">Gas Bill</div>
+            <div class="text-xs font-semibold opacity-60">Today 01:44 AM</div>
+          </div>
+          <button class="btn btn-square btn-ghost">
+            <i class="fa-solid fa-ellipsis-vertical text-lg text-center"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+
   </section>
 
   <!-- scripts js -->
