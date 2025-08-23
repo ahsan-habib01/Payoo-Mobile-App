@@ -22,7 +22,7 @@
         <img class="h-15" src="./assets/Group.png" alt="">
         <div>
           <h2 class="font-bold text-lg">$<span id="available-balance">45000</span></h2>
-          <p  class="text-gray-500">Available Balance</p>
+          <p class="text-gray-500">Available Balance</p>
         </div>
       </div>
       <button class="btn btn-soft text-gray-500"><i
@@ -35,11 +35,11 @@
         <p class="text-gray-500">Enjoy easy and convenient financial services with us. Cashout charge is low and</p>
       </div>
       <div class="grid grid-cols-3 gap-4">
-        <div class=" border-1 border-gray-300 text-center p-5  rounded-xl">
+        <div id="add-money-btn" class=" border-1 border-gray-300 text-center p-5  rounded-xl">
           <img class="mx-auto" src="./assets/wallet1.png" alt="">
           <p>Add Money</p>
         </div>
-        <div class=" border-1 border-gray-300 text-center p-5 rounded-xl">
+        <div id="cash-out-btn" class=" border-1 border-gray-300 text-center p-5 rounded-xl">
           <img class="mx-auto" src="./assets/send1.png" alt="">
           <p>Cashout</p>
         </div>
@@ -64,32 +64,62 @@
   </main>
 
   <section class="p-5 pb-20">
-    <h1 class="text-xl py-5 font-semibold">Add Money</h1>
-    <form class="bg-white p-5 rounded-xl" action="">
-      <div class="mb-1">
-        <label class="block py-3 text-lg font-semibold" for="">Select A Bank</label>
-        <select id="add-bank" class="select w-full rounded-full bg-[#f4f5f7] ">
-          <option disabled selected>Select Bank</option>
-          <option>Sonali Bank</option>
-          <option>Islami Bank</option>
-          <option>Dutch Bangla Bank</option>
-        </select>
-      </div>
-      <div>
-        <label class="block py-3 text-lg font-semibold" for="">Bank Account Number</label>
-        <input id="add-account-number" type="text" placeholder="Enter 11 digit account number"
-          class="input w-full rounded-full bg-[#f4f5f7] " />
-      </div>
-      <div>
-        <label class="block py-3 text-lg font-semibold" for="">Amount to Add</label>
-        <input id="add-amount" type="text" placeholder="Add amount to withdraw" class="input w-full rounded-full bg-[#f4f5f7] " />
-      </div>
-      <div>
-        <label class="block py-3 text-lg font-semibold" for="">Pin Number</label>
-        <input id="add-pin-number" type="text" placeholder="Enter 4 digit pin number" class="input w-full rounded-full bg-[#f4f5f7] " />
-      </div>
-      <button id="add-money-btn" class="btn bg-[#0874f2] w-full mt-5 rounded-full text-white text-lg h-12">Add Money</button>
-    </form>
+    <!-- Add Money Page -->
+    <div id="add-money-page" class="">
+      <h1 class="text-xl py-5 font-semibold">Add Money</h1>
+      <form class="bg-white p-5 rounded-xl" action="">
+        <div class="mb-1">
+          <label class="block py-3 text-lg font-semibold" for="">Select A Bank</label>
+          <select id="add-bank" class="select w-full rounded-full bg-[#f4f5f7] ">
+            <option disabled selected>Select Bank</option>
+            <option>Sonali Bank</option>
+            <option>Islami Bank</option>
+            <option>Dutch Bangla Bank</option>
+          </select>
+        </div>
+        <div>
+          <label class="block py-3 text-lg font-semibold" for="">Bank Account Number</label>
+          <input id="add-account-number" type="text" placeholder="Enter 11 digit account number"
+            class="input w-full rounded-full bg-[#f4f5f7] " />
+        </div>
+        <div>
+          <label class="block py-3 text-lg font-semibold" for="">Amount to Add</label>
+          <input id="add-amount" type="text" placeholder="Add amount to withdraw"
+            class="input w-full rounded-full bg-[#f4f5f7] " />
+        </div>
+        <div>
+          <label class="block py-3 text-lg font-semibold" for="">Pin Number</label>
+          <input id="add-pin-number" type="text" placeholder="Enter 4 digit pin number"
+            class="input w-full rounded-full bg-[#f4f5f7] " />
+        </div>
+        <button id="add-money-submit" class="btn bg-[#0874f2] w-full mt-5 rounded-full text-white text-lg h-12">Add
+          Money</button>
+      </form>
+    </div>
+
+    <!-- Cash out -->
+    <div id="cash-out-page" class="hidden">
+      <h1 class="text-xl py-5 font-semibold">Cash Out</h1>
+      <form class="bg-white p-5 rounded-xl" action="">
+        <div>
+          <label class="block py-3 text-lg font-semibold" for="">Agent Number</label>
+          <input id="agent-number" type="text" placeholder="Enter 11 digit number"
+            class="input w-full rounded-full bg-[#f4f5f7] " />
+        </div>
+        <div>
+          <label class="block py-3 text-lg font-semibold" for="">Amount</label>
+          <input id="withdraw-amount" type="text" placeholder="Enter amount to withdraw"
+            class="input w-full rounded-full bg-[#f4f5f7] " />
+        </div>
+        <div>
+          <label class="block py-3 text-lg font-semibold" for="">Pin Number</label>
+          <input id="pin-number" type="text" placeholder="Enter 4 digit pin number"
+            class="input w-full rounded-full bg-[#f4f5f7] " />
+        </div>
+        <button id="withdraw-submit" class="btn bg-[#0874f2] w-full mt-5 rounded-full text-white text-lg h-12">Withdraw Money</button>
+
+      </form>
+    </div>
   </section>
 
   <!-- scripts js -->
