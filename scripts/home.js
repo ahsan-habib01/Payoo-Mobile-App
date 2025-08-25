@@ -65,6 +65,12 @@ document
     const bank = getInputValue('add-bank');
     const accountNumber = getInputValue('add-account-number');
     const amount = getInputValueNumber('add-amount');
+
+    if (amount <= 0) {
+      alert('Invalid Amount');
+      return;
+    }
+
     const pinNumber = getInputValueNumber('add-pin-number');
 
     const availableBalance = getInnerText('available-balance');
@@ -98,10 +104,15 @@ document
     e.preventDefault();
 
     const agentNumber = getInputValue('agent-number');
-    const withdrawAmount = getInputValueNumber('withdraw-amount');
     const pinNumber = getInputValueNumber('pin-number');
+    const withdrawAmount = getInputValueNumber('withdraw-amount');
 
     const availableBalance = getInnerText('available-balance');
+
+    if (withdrawAmount <= 0 || withdrawAmount > availableBalance) {
+      alert('Invalid Withdraw Amount');
+      return;
+    }
 
     const newAvailableBalance = availableBalance - withdrawAmount;
 
@@ -135,7 +146,6 @@ document
       'transaction-card-container'
     );
 
-    
     for (const data of transactionData) {
       const div = document.createElement('div');
       div.innerHTML = `
@@ -153,8 +163,8 @@ document
         
           <i class="fa-solid fa-ellipsis-vertical"></i>
         </div>
-    `
-    transactionCardContainer.appendChild(div);
+    `;
+      transactionCardContainer.appendChild(div);
     }
   });
 
