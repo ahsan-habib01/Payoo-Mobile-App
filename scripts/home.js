@@ -1,4 +1,5 @@
 const validPIN = 1836;
+const transactionData = [];
 
 //? shared functions to get input values
 function getInputValueNumber(id) {
@@ -50,7 +51,9 @@ function handleButtonToggle(id) {
   }
 
   document.getElementById(id).classList.remove('border-gray-300');
-  document.getElementById(id).classList.add('border-[#0874f2]', 'bg-[#0874f20d]');
+  document
+    .getElementById(id)
+    .classList.add('border-[#0874f2]', 'bg-[#0874f20d]');
 }
 
 //! add money feature
@@ -59,16 +62,11 @@ document
   .addEventListener('click', function (e) {
     e.preventDefault();
 
-    // const bank = document.getElementById('add-bank').value;
-    // const accountNumber = document.getElementById('add-account-number').value;
-    // const amount = parseInt(document.getElementById('add-amount').value);
-    // const pinNumber = parseInt(document.getElementById('add-pin-number').value);
     const bank = getInputValue('add-bank');
     const accountNumber = getInputValue('add-account-number');
     const amount = getInputValueNumber('add-amount');
     const pinNumber = getInputValueNumber('add-pin-number');
 
-    // const availableBalance = parseInt(document.getElementById('available-balance').innerText);
     const availableBalance = getInnerText('available-balance');
 
     const newTotalBalance = availableBalance + amount;
@@ -82,8 +80,15 @@ document
       return;
     }
 
-    // document.getElementById('available-balance').innerText = newTotalBalance;
     setInnerText(newTotalBalance);
+
+    const data = {
+      name: 'Add Money',
+      date: new Date().toLocaleTimeString(),
+    };
+
+    transactionData.push(data);
+    console.log(transactionData);
   });
 
 //! cash out feature
@@ -92,14 +97,10 @@ document
   .addEventListener('click', function (e) {
     e.preventDefault();
 
-    // const agentNumber = document.getElementById('agent-number').value;
-    // const withdrawAmount = parseInt(document.getElementById('withdraw-amount').value);
-    // const pinNumber = parseInt(document.getElementById('pin-number').value);
     const agentNumber = getInputValue('agent-number');
     const withdrawAmount = getInputValueNumber('withdraw-amount');
     const pinNumber = getInputValueNumber('pin-number');
 
-    // const availableBalance = parseInt(document.getElementById('available-balance').innerText);
     const availableBalance = getInnerText('available-balance');
 
     const newAvailableBalance = availableBalance - withdrawAmount;
@@ -113,8 +114,48 @@ document
       return;
     }
 
-    // document.getElementById('available-balance').innerText = newAvailableBalance;
     setInnerText(newAvailableBalance);
+
+    const data = {
+      name: 'Cash Out',
+      date: new Date().toLocaleTimeString(),
+    };
+
+    transactionData.push(data);
+    console.log(data);
+    console.log(transactionData);
+  });
+
+//! Transaction feature
+document
+  .getElementById('transactions-btn')
+  .addEventListener('click', function () {
+    // console.log(transactionData);
+    const transactionCardContainer = document.getElementById(
+      'transaction-card-container'
+    );
+
+    
+    for (const data of transactionData) {
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <div class="bg-white rounded-xl p-3 flex justify-between items-center mt-3">
+          <div class="flex items-center">
+            <div class="bg-[#f4f5f7] p-3 rounded-full">
+              <img src="./assets/wallet1.png" class="mx-auto" alt="">
+            </div>
+            <div class="ml-3">
+              <h1 class="font-semibold">${data.name}</h1>
+              <p>${data.date}</p>
+        
+            </div>
+          </div>
+        
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+    `
+    transactionCardContainer.appendChild(div);
+    }
   });
 
 //! toggling feature
@@ -124,7 +165,7 @@ document
   .addEventListener('click', function (e) {
     handleToggle('add-money-page');
 
-    handleButtonToggle('add-money-btn')
+    handleButtonToggle('add-money-btn');
   });
 
 // Cash Out
