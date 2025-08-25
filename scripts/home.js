@@ -40,6 +40,19 @@ function handleToggle(id) {
   document.getElementById(id).style.display = 'block';
 }
 
+//? function toggle menu Buttons
+function handleButtonToggle(id) {
+  const menuBtns = document.getElementsByClassName('menu-btn');
+
+  for (const btn of menuBtns) {
+    btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
+    btn.classList.add('border-gray-300');
+  }
+
+  document.getElementById(id).classList.remove('border-gray-300');
+  document.getElementById(id).classList.add('border-[#0874f2]', 'bg-[#0874f20d]');
+}
+
 //! add money feature
 document
   .getElementById('add-money-submit')
@@ -106,35 +119,51 @@ document
 
 //! toggling feature
 // Add Money
-document.getElementById('add-money-btn')
+document
+  .getElementById('add-money-btn')
   .addEventListener('click', function (e) {
     handleToggle('add-money-page');
+
+    handleButtonToggle('add-money-btn')
   });
 
 // Cash Out
 document.getElementById('cash-out-btn').addEventListener('click', function (e) {
   handleToggle('cash-out-page');
+
+  handleButtonToggle('cash-out-btn');
 });
 
 // Transfer Money
-document.getElementById('transfer-money-btn')
+document
+  .getElementById('transfer-money-btn')
   .addEventListener('click', function (e) {
     handleToggle('transfer-money-page');
+
+    handleButtonToggle('transfer-money-btn');
   });
 
 // Get Bonus
-document.getElementById('get-bonus-btn')
+document
+  .getElementById('get-bonus-btn')
   .addEventListener('click', function (e) {
     handleToggle('get-bonus-page');
+
+    handleButtonToggle('get-bonus-btn');
   });
 
 // Pay Bill
 document.getElementById('pay-bill-btn').addEventListener('click', function (e) {
   handleToggle('pay-bill-page');
+
+  handleButtonToggle('pay-bill-btn');
 });
 
 // Transactions
-document.getElementById('transactions-btn')
+document
+  .getElementById('transactions-btn')
   .addEventListener('click', function () {
     handleToggle('transactions-page');
+
+    handleButtonToggle('transactions-btn');
   });
