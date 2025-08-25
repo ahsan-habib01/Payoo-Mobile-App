@@ -41,17 +41,17 @@
         </div>
         <div id="cash-out-btn" class=" border-1 border-gray-300 text-center p-5 rounded-xl">
           <img class="mx-auto" src="./assets/send1.png" alt="">
-          <p>Cashout</p>
+          <p>CashOut</p>
         </div>
-        <div class=" border-1 border-gray-300 text-center p-5 rounded-xl">
+        <div id="transfer-money-btn" class=" border-1 border-gray-300 text-center p-5 rounded-xl">
           <img class="mx-auto" src="./assets/money1.png" alt="">
           <p>Transfer Money</p>
         </div>
-        <div class=" border-1 border-gray-300 text-center p-5 rounded-xl">
+        <div id="get-bonus-btn" class=" border-1 border-gray-300 text-center p-5 rounded-xl">
           <img class="mx-auto" src="./assets/bonus1.png" alt="">
           <p>Get Bonus</p>
         </div>
-        <div class=" border-1 border-gray-300 text-center p-5 rounded-xl">
+        <div id="pay-bill-btn" class=" border-1 border-gray-300 text-center p-5 rounded-xl">
           <img class="mx-auto" src="./assets/purse1.png" alt="">
           <p>Pay Bill</p>
         </div>
@@ -65,7 +65,7 @@
 
   <section class="p-5 pb-20">
     <!-- Add Money Page -->
-    <div id="add-money-page" class="hidden">
+    <div id="add-money-page" class="form">
       <h1 class="text-xl py-5 font-semibold">Add Money</h1>
       <form class="bg-white p-5 rounded-xl" action="">
         <div class="mb-1">
@@ -97,8 +97,8 @@
       </form>
     </div>
 
-    <!-- Cash out -->
-    <div id="cash-out-page" class="hidden">
+    <!-- Cash Out Page-->
+    <div id="cash-out-page" class="form hidden">
       <h1 class="text-xl py-5 font-semibold">Cash Out</h1>
       <form class="bg-white p-5 rounded-xl" action="">
         <div>
@@ -122,8 +122,23 @@
       </form>
     </div>
 
-    <!-- Transactions -->
-    <div id="transactions-page" class="">
+    <!-- Transfer Money Page -->
+    <div id="transfer-money-page" class="form hidden">
+      <h1 class="text-xl py-5 font-semibold">Transfer Money</h1>
+    </div>
+
+    <!-- Get Bonus Page -->
+    <div id="get-bonus-page" class="form hidden">
+      <h1 class="text-xl py-5 font-semibold">Get Bonus</h1>
+    </div>
+
+    <!-- Pay Bill Page -->
+    <div id="pay-bill-page" class="form hidden">
+      <h1 class="text-xl py-5 font-semibold">Pay Bill</h1>
+    </div>
+
+    <!-- Transactions Page-->
+    <div id="transactions-page" class="form hidden">
       <div class="flex justify-between items-center">
         <h1 class="text-xl py-5 font-semibold">Transaction History</h1>
         <p class="text-gray-400">View All</p>
